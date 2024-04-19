@@ -1,0 +1,35 @@
+<h3>Liste des agents</h3>
+
+<button routerLink="/liste-agents/create" class="btn btn-outline-success my-2">Nouvel agent</button>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>NOM</th>
+      <th>PRENOM(S)</th>
+      <th>Email</th>
+      <th>Téléphone</th>
+      <th>Salaire</th>
+      <th>Date de naissance</th>
+      <th>Date d'integration</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of agents$ | async; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ a.nom }}</td>
+      <td>{{ a.prenom }}</td>
+      <td>{{ a.email }}</td>
+      <td>{{ a.tels }}</td>
+      <td>{{ a.salary }}</td>
+      <td>{{ a.dateNaissance | date: 'dd/MM/yyyy' }}</td>
+      <td>{{ a.dateIntegration | date: 'dd/MM/yyyy' }}</td>
+      <td>
+        <button class="btn btn-outline-success mx-3">Modifier</button>
+        <button class="btn btn-outline-danger">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

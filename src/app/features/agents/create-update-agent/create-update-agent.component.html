@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <div class="card-header">Création d'un nouvel agent</div>
+
+      <div class="card-body">
+        <form (ngSubmit)="onGetAgentInfos()" [formGroup]="formAgent">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <label class="col-form-label-lg" for="nom">Nom</label>
+              <input formControlName="nom" name="nom" id="nom" type="text" class="form-control">
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="col-form-label-lg" for="prenom">Prénom(s)</label>
+              <input placeholder="Saisir votre prénom" formControlName="prenom" name="prenom" id="prenom" type="text" class="form-control">
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="col-form-label-lg" for="email">email</label>
+              <input formControlName="email" name="email" id="email" type="email" class="form-control">
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="col-form-label-lg" for="tels">Téléphone</label>
+              <input formControlName="tels" name="tels" id="tels" type="tel" class="form-control">
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="col-form-label-lg" for="salary">Salaire</label>
+              <input formControlName="salary" name="salary" id="salary" type="number" class="form-control">
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="col-form-label-lg" for="dateNaissance">Date de naissance</label>
+              <input formControlName="dateNaissance" name="dateNaissance" id="dateNaissance" type="date" class="form-control">
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="col-form-label-lg" for="dateIntegration">Date d'intégration</label>
+              <input formControlName="dateIntegration" name="dateIntegration" id="dateIntegration" type="date" class="form-control">
+            </div>
+          </div>
+          <div class="my-2">
+            <button type="reset" class="btn btn-outline-danger">Réninitialiser</button>
+            <button [disabled]="formAgent.invalid" type="submit" class="btn btn-outline-success mx-3">Valider</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
